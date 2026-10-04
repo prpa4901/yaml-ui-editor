@@ -1,0 +1,33 @@
+{
+  "name": "yaml-ui-editor",
+  "displayName": "YAML UI Editor",
+  "description": "Edit YAML files as a simple visual form",
+  "version": "0.0.4",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "yamlui.openForm", "title": "YAML: Open as UI Form" }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "yamlui.openForm",
+          "when": "resourceExtname == .yaml || resourceExtname == .yml",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "yamlui.openForm",
+          "when": "resourceExtname == .yaml || resourceExtname == .yml"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  }
+}
